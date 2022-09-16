@@ -4,7 +4,7 @@ const isValidName = function (value) {
   if (
     typeof value === "string" &&
     value.trim().length > 0 &&
-    /^[A-Z]+[a-z ]*$/.test(value)
+    /^[A-Z]+[a-z A-Z]*$/.test(value)
   )
     return true;
   return false;

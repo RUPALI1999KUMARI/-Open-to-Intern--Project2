@@ -55,6 +55,9 @@ const registerCollege = async function (req, res) {
   }
 };
 
+
+//==========================// get details //==============================================//
+
 const collegeDetails = async function (req, res) {
   try {
     let collegeName = req.query.collegeName;
@@ -78,7 +81,7 @@ const collegeDetails = async function (req, res) {
         isDeleted: false,
       })
       .select({ _id: 1, name: 1, email: 1, mobile: 1 });
-    // console.log(internsList, typeof validCollegeName);
+
     const result = validCollegeName._doc;
     delete result["_id"];
     result.interns = internsList;

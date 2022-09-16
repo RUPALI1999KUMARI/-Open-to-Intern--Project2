@@ -5,6 +5,7 @@ const validator = require("../utils/validator");
 const interns = async function (req, res) {
   try {
     let data = req.body;
+
     let { name, email, mobile, collegeName } = data;
     if (!validator.isValidRequestBody(data)) {
       return res
@@ -63,4 +64,6 @@ const interns = async function (req, res) {
     res.status(500).send({ status: false, error: err.message });
   }
 };
+
+
 module.exports = { interns };
